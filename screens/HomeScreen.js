@@ -30,7 +30,7 @@ export default function HomeScreen() {
                                 <TextInput 
                                     placeholder="Search city"
                                     placeholderTextColor={'lightgray'}
-                                    className="pl-6 h-10 pb-1 flex-1 text-base text-white"
+                                    className="pl-6 h-10 pb-1 flex-1 text-base text-white font-Inter_400Regular"
                                 />
                             ) : null
                         }
@@ -57,7 +57,7 @@ export default function HomeScreen() {
                                                 className={"flex-row items-center border-0 p-3 px-4 mb-1 " + borderClass}
                                             >
                                                 <MapPinIcon size="20" color="gray" />
-                                                <Text className="text-black ml-2">London, United Kingdom</Text>
+                                                <Text className="text-black ml-2 font-Inter_400Regular">London, United Kingdom</Text>
                                             </TouchableOpacity>
                                         )
                                     }
@@ -71,9 +71,9 @@ export default function HomeScreen() {
                 {/* forecast section */}
                 <View className="mx-4 flex justify-around flex-1 mb-2">
                     {/* location */}
-                    <Text className="text-white text-center text-2xl font-bold">
+                    <Text className="text-white text-center text-2xl font-Inter_700Bold">
                         London,
-                        <Text className="text-lg font-semibold text-gray-300">
+                        <Text className="text-lg font-Inter_600SemiBold text-gray-300">
                             United Kingdom
                         </Text>
                     </Text>
@@ -85,10 +85,10 @@ export default function HomeScreen() {
                     </View>
                     {/* degree celcius */} 
                     <View className="space-y-2">
-                        <Text className="text-center font-bold text-white text-6xl ml-5">
+                        <Text className="text-center font-Inter_700Bold text-white text-6xl ml-5">
                             23&#176;C
                         </Text>
-                        <Text className="text-center text-white text-xl tracking-widest">
+                        <Text className="text-center text-white text-xl tracking-widest font-Inter_400Regular">
                             Partly cloudy
                         </Text>
                     </View>
@@ -96,19 +96,19 @@ export default function HomeScreen() {
                     <View className="flex-row justify-between mx-4">
                         <View className="flex-row space-x-2 items-center">
                             <Image source={require('../assets/icons/wind.png')} className="h-6 w-6"/>
-                            <Text className="text-white font-semibold text-base">
+                            <Text className="text-white font-Inter_600SemiBold text-base">
                                 22km
                             </Text>
                         </View>
                         <View className="flex-row space-x-2 items-center">
                             <Image source={require('../assets/icons/drop.png')} className="h-6 w-6"/>
-                            <Text className="text-white font-semibold text-base">
+                            <Text className="text-white font-Inter_600SemiBold text-base">
                                 23%
                             </Text>
                         </View>
                         <View className="flex-row space-x-2 items-center">
                             <Image source={require('../assets/icons/sun.png')} className="h-6 w-6"/>
-                            <Text className="text-white font-semibold text-base">
+                            <Text className="text-white font-Inter_600SemiBold text-base">
                                 6:05 AM
                             </Text>
                         </View>
