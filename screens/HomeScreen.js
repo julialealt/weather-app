@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { Text, View, SafeAreaView, TextInput, TouchableOpacity } from "react-native";
+import { Text, View, SafeAreaView, TextInput, TouchableOpacity, ScrollView } from "react-native";
 import { Image } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { theme } from '../theme'
 import {MagnifyingGlassIcon } from 'react-native-heroicons/outline'
-import { MapPinIcon } from 'react-native-heroicons/solid'
+import { CalendarDaysIcon, MapPinIcon } from 'react-native-heroicons/solid'
 
 export default function HomeScreen() {
     const [showSearch, toggleSearch] = useState(false);
@@ -86,7 +86,7 @@ export default function HomeScreen() {
                     {/* degree celcius */} 
                     <View className="space-y-2">
                         <Text className="text-center font-Inter_700Bold text-white text-6xl ml-5">
-                            23&#176;C
+                            23&#176;
                         </Text>
                         <Text className="text-center text-white text-xl tracking-widest font-Inter_400Regular">
                             Partly cloudy
@@ -116,6 +116,95 @@ export default function HomeScreen() {
                 </View>
 
                 {/* forecast for next days */}
+                <View className="mb-2 space-y-3">
+                    <View className="flex-row items-center mx-5 space-x-2">
+                        <CalendarDaysIcon size="22" color="white" />
+                        <Text className="text-white text-base font-Inter_400Regular">Daily forecast</Text>
+                    </View>
+                    <ScrollView 
+                        horizontal
+                        contentContainerStyle={{paddingHorizontal: 15, paddingBottom: 30}}
+                        showsHorizontalScrollIndicator={false}
+                    >
+                        <View 
+                            className="flex justify-center items-center w-24 rounded-3xl py-3 space-y-1 mr-4"
+                            style={{backgroundColor: theme.bgWhite(0.15)}}
+                        >
+                            <Image source={require('../assets/images/heavyrain.png')}
+                            className="h-11 w-11" />
+                            <Text className="text-white font-Inter_400Regular">Monday</Text>
+                            <Text className="text-white text-xl font-Inter_600SemiBold">
+                                13&#176;
+                            </Text>
+                        </View>
+                        <View 
+                            className="flex justify-center items-center w-24 rounded-3xl py-3 space-y-1 mr-4"
+                            style={{backgroundColor: theme.bgWhite(0.15)}}
+                        >
+                            <Image source={require('../assets/images/heavyrain.png')}
+                            className="h-11 w-11" />
+                            <Text className="text-white font-Inter_400Regular">Tuesday</Text>
+                            <Text className="text-white text-xl font-Inter_600SemiBold">
+                                13&#176;
+                            </Text>
+                        </View>
+                        <View 
+                            className="flex justify-center items-center w-24 rounded-3xl py-3 space-y-1 mr-4"
+                            style={{backgroundColor: theme.bgWhite(0.15)}}
+                        >
+                            <Image source={require('../assets/images/heavyrain.png')}
+                            className="h-11 w-11" />
+                            <Text className="text-white font-Inter_400Regular">Wednsday</Text>
+                            <Text className="text-white text-xl font-Inter_600SemiBold">
+                                13&#176;
+                            </Text>
+                        </View>
+                        <View 
+                            className="flex justify-center items-center w-24 rounded-3xl py-3 space-y-1 mr-4"
+                            style={{backgroundColor: theme.bgWhite(0.15)}}
+                        >
+                            <Image source={require('../assets/images/heavyrain.png')}
+                            className="h-11 w-11" />
+                            <Text className="text-white font-Inter_400Regular">Thursday</Text>
+                            <Text className="text-white text-xl font-Inter_600SemiBold">
+                                13&#176;
+                            </Text>
+                        </View>
+                        <View 
+                            className="flex justify-center items-center w-24 rounded-3xl py-3 space-y-1 mr-4"
+                            style={{backgroundColor: theme.bgWhite(0.15)}}
+                        >
+                            <Image source={require('../assets/images/heavyrain.png')}
+                            className="h-11 w-11" />
+                            <Text className="text-white font-Inter_400Regular">Friday</Text>
+                            <Text className="text-white text-xl font-Inter_600SemiBold">
+                                13&#176;
+                            </Text>
+                        </View>
+                        <View 
+                            className="flex justify-center items-center w-24 rounded-3xl py-3 space-y-1 mr-4"
+                            style={{backgroundColor: theme.bgWhite(0.15)}}
+                        >
+                            <Image source={require('../assets/images/heavyrain.png')}
+                            className="h-11 w-11" />
+                            <Text className="text-white font-Inter_400Regular">Saturday</Text>
+                            <Text className="text-white text-xl font-Inter_600SemiBold">
+                                13&#176;
+                            </Text>
+                        </View>
+                        <View 
+                            className="flex justify-center items-center w-24 rounded-3xl py-3 space-y-1 mr-4"
+                            style={{backgroundColor: theme.bgWhite(0.15)}}
+                        >
+                            <Image source={require('../assets/images/heavyrain.png')}
+                            className="h-11 w-11" />
+                            <Text className="text-white font-Inter_400Regular">Sunday</Text>
+                            <Text className="text-white text-xl font-Inter_600SemiBold">
+                                13&#176;
+                            </Text>
+                        </View>
+                    </ScrollView>
+                </View>
             </SafeAreaView>
         </View>
     )
