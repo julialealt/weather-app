@@ -1,18 +1,32 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import { Text, View, SafeAreaView, TextInput, TouchableOpacity, ScrollView } from "react-native";
 import { Image } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { theme } from '../theme'
 import {MagnifyingGlassIcon } from 'react-native-heroicons/outline'
 import { CalendarDaysIcon, MapPinIcon } from 'react-native-heroicons/solid'
+import { debounce } from 'lodash';
+import { fetchLocations } from "../api/weather";
 
 export default function HomeScreen() {
     const [showSearch, toggleSearch] = useState(false);
-    const [locations, setLocations] = useState([1,2,3]);
+    const [locations, setLocations] = useState([]);
+    
 
     const handleLocation = (loc) => {
         console.log('location: ', loc)
     } 
+
+    const handleSearch = value => {
+
+        if(value.length > 2) {
+            fetchLocations({cityName: value}).then(data => {
+                setLocations(data);
+            })
+        }
+    }
+
+    const handleTextDebounce = useCallback(debounce(handleSearch, 1200), [])
 
     return (
         <View className="flex-1 relative">
@@ -28,6 +42,7 @@ export default function HomeScreen() {
                         {
                             showSearch ? (
                                 <TextInput 
+                                    onChangeText={handleTextDebounce}
                                     placeholder="Search city"
                                     placeholderTextColor={'lightgray'}
                                     className="pl-6 h-10 pb-1 flex-1 text-base text-white font-Inter_400Regular"
@@ -57,12 +72,10 @@ export default function HomeScreen() {
                                                 className={"flex-row items-center border-0 p-3 px-4 mb-1 " + borderClass}
                                             >
                                                 <MapPinIcon size="20" color="gray" />
-                                                <Text className="text-black ml-2 font-Inter_400Regular">London, United Kingdom</Text>
+                                                <Text className="text-black ml-2 font-Inter_400Regular">{loc?.name}, {loc?.country}</Text>
                                             </TouchableOpacity>
                                         )
-                                    }
-
-                                    )
+                                    })
                                 }
                             </View>
                         ) : null
