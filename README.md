@@ -4,9 +4,9 @@
 <p align="center">
   <img src="https://github.com/julialealt/weather-app/assets/84246834/34913dcc-78cc-4dd4-83aa-b7cd52b54a77" alt="img1" width="250"/>
   &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="https://github.com/julialealt/weather-app/assets/84246834/d40d598d-3233-4582-8419-070efa2f73b9" alt="img2" width="250"/>
+  <img src="https://github.com/julialealt/weather-app/assets/84246834/0e8207f0-509a-4123-b3ba-9ee91d78def1" alt="img2" width="250"/>
   &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="https://github.com/julialealt/weather-app/assets/84246834/c2c2abe6-f7df-4a05-92a2-7d03ef579716" alt="img3" width="250"/>
+  <img src="https://github.com/julialealt/weather-app/assets/84246834/fd878236-024b-45b7-b6d0-6ae31729f203" alt="img3" width="250"/>
 </p>
 
 <p align="center">
