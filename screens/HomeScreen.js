@@ -135,7 +135,7 @@ export default function HomeScreen() {
                         {/* weather image */}
                         <View className="flex-row justify-center">
                             <Image 
-                            source={weatherImages[current?.condition?.text]}
+                            source={weatherImages[current?.condition?.text] ? weatherImages[current?.condition?.text] : weatherImages['other']}
                             className="w-52 h-52"
                             />
                         </View>
@@ -159,7 +159,7 @@ export default function HomeScreen() {
                             <View className="flex-row space-x-2 items-center">
                                 <Image source={require('../assets/icons/drop.png')} className="h-6 w-6"/>
                                 <Text className="text-white font-Inter_600SemiBold text-base">
-                                {current?.humidity}km%
+                                {current?.humidity}%
                                 </Text>
                             </View>
                             <View className="flex-row space-x-2 items-center">
@@ -194,7 +194,7 @@ export default function HomeScreen() {
                                             className="flex justify-center items-center w-24 rounded-3xl py-3 space-y-1 mr-4"
                                             style={{backgroundColor: theme.bgWhite(0.15)}}
                                         >
-                                            <Image source={weatherImages[item?.day?.condition?.text]}
+                                            <Image source={weatherImages[item?.day?.condition?.text] ? weatherImages[item?.day?.condition?.text] : weatherImages['other']}
                                             className="h-11 w-11" />
                                             <Text className="text-white font-Inter_400Regular">{dayName}</Text>
                                             <Text className="text-white text-xl font-Inter_600SemiBold">
