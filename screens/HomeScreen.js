@@ -3,7 +3,7 @@ import { Text, View, SafeAreaView, TextInput, TouchableOpacity, ScrollView } fro
 import { Image } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { theme } from '../theme'
-import {MagnifyingGlassIcon } from 'react-native-heroicons/outline'
+import { MagnifyingGlassIcon } from 'react-native-heroicons/outline'
 import { CalendarDaysIcon, MapPinIcon } from 'react-native-heroicons/solid'
 import { debounce } from 'lodash';
 import { fetchLocations, fetchWeatherForecast } from "../api/weather";
