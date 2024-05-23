@@ -163,7 +163,7 @@ export default function HomeScreen() {
                             <View className="flex-row space-x-2 items-center">
                                 <Image source={require('../assets/icons/sun.png')} className="h-6 w-6"/>
                                 <Text className="text-white font-Inter_600SemiBold text-base">
-                                    6:05 AM
+                                    {weather?.forecast?.forecastday[0]?.astro?.sunrise}
                                 </Text>
                             </View>
                         </View>
