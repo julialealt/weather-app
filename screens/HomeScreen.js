@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { Text, View, SafeAreaView, TextInput, TouchableOpacity, ScrollView } from "react-native";
+import { Text, View, SafeAreaView, TextInput, TouchableOpacity, ScrollView, KeyboardAvoidingView } from "react-native";
 import { Image } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { theme } from '../theme'
@@ -77,27 +77,29 @@ export default function HomeScreen() {
                 <SafeAreaView className="flex-1 pt-14">
                     {/*search section*/}
                     <View style={{height: '7%'}} className="mx-4 relative z-50">
-                        <View className="flex-row justify-end items-center rounded-full"
-                        style={{backgroundColor: showSearch ? theme.bgWhite(0.2) : 'transparent'}}>
-                            {
-                                showSearch ? (
-                                    <TextInput 
-                                        onChangeText={handleTextDebounce}
-                                        placeholder="Search city"
-                                        placeholderTextColor={'lightgray'}
-                                        className="pl-6 h-10 pb-1 flex-1 text-base text-white font-Inter_400Regular"
-                                    />
-                                ) : null
-                            }
-                            
-                            <TouchableOpacity 
-                                onPress={() => toggleSearch(!showSearch)}
-                                style={{backgroundColor: theme.bgWhite(0.3)}}
-                                className="rounded-full p-3 m-1"
-                            >
-                                <MagnifyingGlassIcon size="25" color="white"/>
-                            </TouchableOpacity>
-                        </View>
+                        <KeyboardAvoidingView>
+                            <View className="flex-row justify-end items-center rounded-full"
+                            style={{backgroundColor: showSearch ? theme.bgWhite(0.2) : 'transparent'}}>
+                                {
+                                    showSearch ? (
+                                        <TextInput 
+                                            onChangeText={handleTextDebounce}
+                                            placeholder="Search city"
+                                            placeholderTextColor={'lightgray'}
+                                            className="pl-6 h-10 pb-1 flex-1 text-base text-white font-Inter_400Regular"
+                                        />
+                                    ) : null
+                                }
+                                
+                                <TouchableOpacity 
+                                    onPress={() => toggleSearch(!showSearch)}
+                                    style={{backgroundColor: theme.bgWhite(0.3)}}
+                                    className="rounded-full p-3 m-1"
+                                >
+                                    <MagnifyingGlassIcon size="25" color="white"/>
+                                </TouchableOpacity>
+                            </View>
+                        </KeyboardAvoidingView>
                         {
                             locations.length > 0 && showSearch ? (
                                 <View className="absolute w-full bg-gray-300 top-16 rounded-3xl">
