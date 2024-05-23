@@ -9,6 +9,7 @@ import { debounce } from 'lodash';
 import { fetchLocations, fetchWeatherForecast } from "../api/weather";
 import { weatherImages } from "../constants";
 import * as Progress from 'react-native-progress'
+import { getData, storeData } from "../utils/asyncStorage";
 
 export default function HomeScreen() {
     const [showSearch, toggleSearch] = useState(false);
@@ -27,6 +28,7 @@ export default function HomeScreen() {
         }).then(data => {
             setWeather(data);
             setLoading(false);
+            storeData('city', loc.name);
         })
     } 
 
@@ -44,8 +46,11 @@ export default function HomeScreen() {
     }, []);
 
     const fetchMyWeatherData = async () => {
+        let myCity = await getData('city');
+        let cityName = 'Fortaleza';
+        if (myCity) cityName = myCity;
         fetchWeatherForecast({
-            cityName: 'Sao Paulo',
+            cityName,
             days: '7'
         }).then(data => {
             setWeather(data);
@@ -69,7 +74,6 @@ export default function HomeScreen() {
                         <Progress.CircleSnail thickness={10} size={70} color="#0bb3b2" />
                     </View>
                 ):
-            
                 <SafeAreaView className="flex-1 pt-14">
                     {/*search section*/}
                     <View style={{height: '7%'}} className="mx-4 relative z-50">
