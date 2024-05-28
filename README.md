@@ -17,7 +17,7 @@
   <img src="https://github.com/julialealt/weather-app/assets/84246834/d4fdcedd-a52b-454d-b606-9a59359c4dd6" alt="img6" width="250"/>
 </p>
 
-<br>
+<br/>
 
 ## Technologies
 
@@ -32,7 +32,7 @@
 - Expo Google Fonts
 - React Native Hero Icons
 
-<br>
+<br/>
 
 ## Running locally
 
@@ -54,13 +54,19 @@ Install the dependencies
   npm i
 ```
 
+Go to [Weather API](https://www.weatherapi.com/), create an account, copy your API Key and place it on '../constants/index.js'
+
+```bash
+  export const apiKey = '{put your API Key here}';
+```
+
 Start the server
 
 ```bash
   npx expo start
 ```
 
-<br>
+<br/>
 
 #### Credits
 
