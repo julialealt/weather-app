@@ -70,4 +70,4 @@ Start the server
 
 #### Credits
 
-I made this app following [this tutorial](https://youtu.be/953vyZMO4cM?si=n21GPGOaJn82WVjc)
+[link](https://youtu.be/953vyZMO4cM?si=n21GPGOaJn82WVjc)
